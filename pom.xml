@@ -64,7 +64,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.4.2.RELEASE</version>
                 <configuration>
-                    <mainClass>hello.Application</mainClass>
+                    <mainClass>hello.application.Application</mainClass>
                 </configuration>
                 <executions>
                     <execution>
