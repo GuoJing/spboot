@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
  * Created by guojing on 2016/12/13.
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"hello.api"})
+@ComponentScan(basePackages = {"hello.api", "hello.service.impl"})
 public class Application extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(hello.application.Application.class, args);
