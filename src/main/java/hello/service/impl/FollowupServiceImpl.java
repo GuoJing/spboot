@@ -18,6 +18,10 @@ public class FollowupServiceImpl implements FollowupService {
     @Override
     public String getById(Long id) {
         FollowupDomain followupDomain = followupMapper.find(id);
-        return followupDomain.getContent();
+        if (followupDomain != null) {
+            return followupDomain.getContent();
+        } else {
+            return "followup domain not found";
+        }
     }
 }
