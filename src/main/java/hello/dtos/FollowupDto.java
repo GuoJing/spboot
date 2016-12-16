@@ -1,24 +1,28 @@
 package hello.dtos;
 
+import hello.domain.FollowupDomain;
+
 /**
  * Created by guojing on 2016/12/13.
  */
 
 public class FollowupDto {
 
-    private final long id;
-    private final String content;
+    private final FollowupDomain followup;
 
-    public FollowupDto(long id, String content) {
-        this.id = id;
-        this.content = content;
+    public FollowupDto(FollowupDomain followup) {
+        this.followup = followup;
     }
 
-    public long getId() {
-        return id;
+    public Long getId(){
+        return followup.getId();
     }
 
-    public String getContent() {
-        return content;
+    public String getContent(){
+        return followup.getContent();
+    }
+
+    public int getCodex(){
+        return followup.getCodex();
     }
 }

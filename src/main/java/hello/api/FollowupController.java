@@ -2,6 +2,7 @@ package hello.api;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import hello.domain.FollowupDomain;
 import hello.dtos.FollowupDto;
 import hello.service.FollowupService;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class FollowupController {
     @RequestMapping(value="/followup/{followupId}")
     @ResponseBody
     public FollowupDto greeting(@PathVariable(value="followupId") Integer followupId) {
-        String someId = followupService.getById(Long.valueOf(followupId));
-        return new FollowupDto(counter.incrementAndGet(), String.format(template, someId));
+        FollowupDomain followupDomain = followupService.getById(Long.valueOf(followupId));
+        return new FollowupDto(followupDomain);
     }
 }
