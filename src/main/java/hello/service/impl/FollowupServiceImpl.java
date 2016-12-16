@@ -2,6 +2,7 @@ package hello.service.impl;
 
 import hello.dao.FollowupMapper;
 import hello.domain.FollowupDomain;
+import hello.exceptions.NotFoundException;
 import hello.service.FollowupService;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,9 @@ public class FollowupServiceImpl implements FollowupService {
     @Override
     public FollowupDomain getById(Long id) {
         FollowupDomain followupDomain = followupMapper.find(id);
+        if (followupDomain == null) {
+            throw new NotFoundException("followup is not found");
+        }
         return followupDomain;
     }
 }
